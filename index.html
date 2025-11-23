@@ -1,0 +1,2039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CMR Talent League — Powered by BeSure</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="CMR Talent League — Powered by BeSure. A digital campus talent event to discover, celebrate, and amplify student talent across CMR Group of Institutions." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg-body: #020617;
+      --bg-elevated: #020b1f;
+      --bg-soft: #030712;
+      --cmr-blue: #0b63ce;
+      --cmr-blue-soft: #1f76df;
+      --cmr-blue-muted: #0b63ce1a;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --text-soft: #6b7280;
+      --border-subtle: #1f2933;
+      --accent: #38bdf8;
+      --accent-soft: #38bdf81a;
+      --radius-lg: 24px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --shadow-subtle: 0 18px 40px rgba(15, 23, 42, 0.5);
+      --transition-fast: 200ms ease;
+      --transition-med: 320ms ease;
+      --header-height: 70px;
+      --container-max: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--header-height);
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #0b63ce1f 0, transparent 55%),
+                  radial-gradient(circle at bottom right, #0b63ce1a 0, transparent 55%),
+                  var(--bg-body);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout */
+    .page-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 4.5rem 0;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      section {
+        padding: 5.5rem 0;
+      }
+    }
+
+    .section-header {
+      max-width: 680px;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* Header / Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(16px);
+      background: radial-gradient(circle at top left, #0b63ce26 0, transparent 50%),
+                  rgba(2, 6, 23, 0.92);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    .header-inner {
+      height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 40%;
+      background: conic-gradient(from 210deg, #0b63ce, #38bdf8, #0b63ce);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: inherit;
+      background: radial-gradient(circle at 15% 0, #ffffff44 0, transparent 40%),
+                  #020617;
+      opacity: 0.9;
+    }
+
+    .brand-initials {
+      position: relative;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.05rem;
+    }
+
+    .brand-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-soft);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.88rem;
+    }
+
+    .nav-link {
+      position: relative;
+      padding: 0.25rem 0;
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--cmr-blue));
+      transition: width var(--transition-fast);
+    }
+
+    .nav-link:hover {
+      color: #f9fafb;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: none;
+      padding: 0.5rem 0.95rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      background: radial-gradient(circle at top left, #0b63ce1f 0, transparent 50%),
+                  #020617;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.55);
+      cursor: pointer;
+      transition: border var(--transition-fast), transform var(--transition-fast),
+                  box-shadow var(--transition-fast), background var(--transition-fast);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      border-color: rgba(248, 250, 252, 0.7);
+      background: radial-gradient(circle at top left, #0b63ce33 0, transparent 50%),
+                  #020617;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    /* Mobile menu */
+    .menu-toggle {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    .menu-lines {
+      width: 16px;
+      height: 13px;
+      position: relative;
+    }
+
+    .menu-lines span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1.5px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      transition: transform 200ms ease, opacity 200ms ease, top 200ms ease, bottom 200ms ease;
+    }
+
+    .menu-lines span:nth-child(1) {
+      top: 0;
+    }
+
+    .menu-lines span:nth-child(2) {
+      top: 5.5px;
+    }
+
+    .menu-lines span:nth-child(3) {
+      bottom: 0;
+    }
+
+    .menu-toggle.is-open .menu-lines span:nth-child(1) {
+      top: 5.5px;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle.is-open .menu-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.is-open .menu-lines span:nth-child(3) {
+      bottom: auto;
+      top: 5.5px;
+      transform: rotate(-45deg);
+    }
+
+    .nav-mobile {
+      display: none;
+      padding: 0.75rem 0 1rem;
+    }
+
+    .nav-mobile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.92rem;
+    }
+
+    .nav-mobile-links .nav-link {
+      padding: 0.45rem 0;
+    }
+
+    .nav-open .nav-mobile {
+      display: block;
+    }
+
+    @media (min-width: 768px) {
+      .menu-toggle {
+        display: none;
+      }
+      .nav-links {
+        display: flex;
+      }
+      .nav-cta {
+        display: inline-flex;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding-top: 2.5rem;
+      padding-bottom: 4.5rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      gap: 2.75rem;
+    }
+
+    .hero-main {
+      max-width: 640px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at 0 0, #0b63ce33 0, transparent 45%),
+                  rgba(15, 23, 42, 0.9);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-tag-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e, #16a34a);
+      box-shadow: 0 0 0 5px #22c55e26;
+    }
+
+    .hero-tag-divider {
+      width: 1px;
+      height: 18px;
+      background: linear-gradient(to bottom, #64748b, transparent);
+    }
+
+    .hero-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.05em;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (min-width: 640px) {
+      .hero-title {
+        font-size: 2.35rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+    }
+
+    .hero-highlight {
+      background: linear-gradient(90deg, #f9fafb, #e5e7eb);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+      max-width: 520px;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+                  border var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-image: radial-gradient(circle at 0 0, #38bdf8, #0b63ce);
+      color: #f9fafb;
+      box-shadow: 0 18px 40px rgba(8, 47, 73, 0.8);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1.5px);
+      box-shadow: 0 24px 60px rgba(8, 47, 73, 1);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(148, 163, 184, 0.65);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      border-color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .hero-footnote {
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--text-soft);
+    }
+
+    .hero-footnote strong {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .hero-visual {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 1.6rem 1.4rem;
+      background: radial-gradient(circle at top left, #0b63ce1a 0, transparent 50%),
+                  linear-gradient(145deg, #020617, #020617, #020c22);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -80px;
+      background: radial-gradient(circle at 10% -10%, #38bdf833 0, transparent 55%),
+                  radial-gradient(circle at 110% 110%, #0b63ce33 0, transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-card-top {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-card-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .hero-pill {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), #22c55e);
+    }
+
+    .hero-stats-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .stat-card {
+      padding: 0.8rem 0.9rem;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at top left, #0b63ce1f 0, transparent 55%),
+                  rgba(15, 23, 42, 0.9);
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-soft);
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-value {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .stat-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .hero-bottom-row {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.4rem;
+    }
+
+    .hero-progress-copy {
+      font-size: 0.72rem;
+      color: var(--text-soft);
+    }
+
+    .hero-progress-track {
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      overflow: hidden;
+    }
+
+    .hero-progress-value {
+      height: 100%;
+      width: 68%;
+      background: linear-gradient(90deg, #0ea5e9, #0b63ce);
+      border-radius: 999px;
+    }
+
+    /* Vision */
+    .vision-card {
+      border-radius: var(--radius-lg);
+      padding: 1.9rem 1.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top left, #0b63ce1c 0, transparent 55%),
+                  #020617;
+      box-shadow: var(--shadow-subtle);
+      font-size: 0.96rem;
+      color: #e5e7eb;
+      line-height: 1.8;
+    }
+
+    .vision-card strong {
+      font-weight: 500;
+      color: #f9fafb;
+    }
+
+    /* Objectives */
+    .objectives-grid {
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .objective-card {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 1rem 1.2rem;
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      transition: transform var(--transition-med), box-shadow var(--transition-med),
+                  border var(--transition-med), background var(--transition-med);
+    }
+
+    .objective-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #0b63ce, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+    }
+
+    .objective-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(248, 250, 252, 0.85);
+      background: radial-gradient(circle at top left, #0b63ce1f 0, transparent 55%),
+                  rgba(15, 23, 42, 0.98);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.95);
+    }
+
+    /* Event overview */
+    .overview-layout {
+      display: grid;
+      gap: 1.8rem;
+    }
+
+    .overview-main {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    .overview-sidebar {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      padding: 1rem 1.2rem 1.1rem;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      display: grid;
+      gap: 0.35rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .badge-pill {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+    }
+
+    .dot-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .dot-row span {
+      font-size: 0.78rem;
+    }
+
+    /* Categories */
+    .categories-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .categories-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .category-card {
+      position: relative;
+      border-radius: 20px;
+      padding: 1.1rem 1.1rem;
+      background: radial-gradient(circle at top left, #0b63ce24 0, transparent 60%),
+                  rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      overflow: hidden;
+      cursor: default;
+      transition: transform var(--transition-med), box-shadow var(--transition-med),
+                  border var(--transition-med), background var(--transition-med);
+    }
+
+    .category-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: radial-gradient(circle at 0 0, #38bdf81f, transparent 50%);
+      opacity: 0;
+      transition: opacity var(--transition-med);
+    }
+
+    .category-name {
+      position: relative;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .category-tag {
+      position: relative;
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      margin-bottom: 0.45rem;
+    }
+
+    .category-description {
+      position: relative;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+      transform: translateY(8px);
+      opacity: 0;
+      transition: opacity var(--transition-med), transform var(--transition-med);
+    }
+
+    .category-card:hover {
+      transform: translateY(-4px) translateZ(0);
+      border-color: rgba(248, 250, 252, 0.9);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.95);
+      background: radial-gradient(circle at top left, #0b63ce33 0, transparent 60%),
+                  rgba(15, 23, 42, 0.98);
+    }
+
+    .category-card:hover::before {
+      opacity: 1;
+    }
+
+    .category-card:hover .category-description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Judging */
+    .judging-layout {
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    .criteria-list {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    .criterion-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.75rem;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+
+    .criterion-label {
+      font-weight: 500;
+    }
+
+    .criterion-percent {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+
+    .criterion-bar {
+      grid-column: 1 / -1;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+
+    .criterion-fill {
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #38bdf8, #0b63ce);
+    }
+
+    .judging-note {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      margin-top: 0.9rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: radial-gradient(circle at top left, #0b63ce1c 0, transparent 55%),
+                  rgba(15, 23, 42, 0.98);
+      padding: 1.4rem 1.4rem 1.6rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .timeline-track {
+      position: relative;
+      padding-left: 1.3rem;
+      display: grid;
+      gap: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .timeline-track::before {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+      background: linear-gradient(to bottom, #38bdf8, transparent);
+      opacity: 0.6;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: -1.3rem;
+      top: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      border: 2px solid #0b63ce;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline-node-inner {
+      width: 6px;
+      height: 6px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, #38bdf8, #0b63ce);
+    }
+
+    .timeline-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-date {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .timeline-note {
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      margin-top: 0.4rem;
+    }
+
+    /* Rules */
+    .rules-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .rule-card {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 1.1rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .rule-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.55rem;
+    }
+
+    .rule-list {
+      list-style: none;
+      display: grid;
+      gap: 0.4rem;
+      font-size: 0.86rem;
+      color: var(--text-main);
+    }
+
+    .rule-list li {
+      display: flex;
+      gap: 0.45rem;
+      align-items: flex-start;
+    }
+
+    .rule-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #38bdf8;
+      margin-top: 0.38rem;
+      flex-shrink: 0;
+    }
+
+    .hashtag {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 0.86rem;
+      color: var(--accent);
+    }
+
+    /* Awards */
+    .awards-layout {
+      display: grid;
+      gap: 1.6rem;
+    }
+
+    @media (min-width: 768px) {
+      .awards-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .award-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at top left, #0b63ce26 0, transparent 55%),
+                  rgba(15, 23, 42, 0.98);
+      padding: 1.3rem 1.25rem 1.4rem;
+      box-shadow: var(--shadow-subtle);
+    }
+
+    .award-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .award-title {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .award-pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+    }
+
+    .award-list {
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.86rem;
+      color: var(--text-main);
+    }
+
+    .award-list li {
+      display: flex;
+      gap: 0.4rem;
+      align-items: flex-start;
+    }
+
+    .award-icon {
+      font-size: 0.9rem;
+      margin-top: 0.1rem;
+    }
+
+    /* Why this matters */
+    .why-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 640px) {
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .why-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .why-card {
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(15, 23, 42, 0.96);
+      padding: 1.1rem 1rem;
+      font-size: 0.9rem;
+      display: grid;
+      gap: 0.4rem;
+      transition: transform var(--transition-med), border var(--transition-med),
+                  box-shadow var(--transition-med), background var(--transition-med);
+    }
+
+    .why-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #0b63ce, #020617);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .why-title {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .why-text {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .why-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(248, 250, 252, 0.9);
+      background: radial-gradient(circle at top left, #0b63ce1f 0, transparent 60%),
+                  rgba(15, 23, 42, 0.98);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 2.5rem 0 2rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      margin-top: 2.5rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      gap: 1.5rem;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+    @media (min-width: 640px) {
+      .footer-inner {
+        grid-template-columns: minmax(0, 2.2fr) minmax(0, 1fr);
+        align-items: flex-start;
+      }
+    }
+
+    .footer-brand-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 0.98rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: #e5e7eb;
+    }
+
+    .footer-meta {
+      font-size: 0.8rem;
+    }
+
+    .footer-contact {
+      display: grid;
+      gap: 0.4rem;
+      justify-items: flex-start;
+    }
+
+    .footer-contact a {
+      color: var(--accent);
+      font-size: 0.82rem;
+    }
+
+    .footer-copy {
+      margin-top: 1.5rem;
+      font-size: 0.76rem;
+      color: var(--text-soft);
+      text-align: left;
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 90ms;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 180ms;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 270ms;
+    }
+
+    /* Scroll to top */
+    .scroll-top {
+      position: fixed;
+      right: 1.25rem;
+      bottom: 1.25rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at top left, #0b63ce33 0, transparent 60%),
+                  rgba(15, 23, 42, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #e5e7eb;
+      cursor: pointer;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.95);
+      opacity: 0;
+      transform: translateY(14px);
+      pointer-events: none;
+      transition: opacity 220ms ease, transform 220ms ease;
+      z-index: 35;
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    /* Responsive tweaks */
+    @media (min-width: 768px) {
+      .hero {
+        padding-top: 3.3rem;
+        padding-bottom: 5rem;
+      }
+
+      .hero-inner {
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+        align-items: center;
+      }
+
+      .overview-layout {
+        grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+        align-items: flex-start;
+      }
+
+      .judging-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1.1fr);
+        align-items: flex-start;
+        gap: 2.5rem;
+      }
+
+      .timeline-track {
+        padding-left: 1.8rem;
+      }
+
+      .timeline-track::before {
+        left: 7px;
+      }
+
+      .timeline-node {
+        left: -1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-inner">
+          <div class="brand">
+            <div class="brand-mark">
+              <span class="brand-initials">CMR</span>
+            </div>
+            <div class="brand-text">
+              <div class="brand-title">CMR Talent League</div>
+              <div class="brand-subtitle">Powered by BeSure</div>
+            </div>
+          </div>
+
+          <nav class="nav">
+            <div class="nav-links">
+              <span class="nav-link" data-target="#home">Home</span>
+              <span class="nav-link" data-target="#overview">Overview</span>
+              <span class="nav-link" data-target="#categories">Categories</span>
+              <span class="nav-link" data-target="#timeline">Timeline</span>
+              <span class="nav-link" data-target="#awards">Awards</span>
+              <span class="nav-link" data-target="#contact">Contact</span>
+            </div>
+            <button class="nav-cta" data-target="#timeline" type="button">
+              Join the League
+            </button>
+            <button class="menu-toggle" aria-label="Toggle navigation" type="button">
+              <div class="menu-lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </button>
+          </nav>
+        </div>
+
+        <!-- Mobile nav -->
+        <div class="nav-mobile">
+          <div class="nav-mobile-links">
+            <span class="nav-link" data-target="#home">Home</span>
+            <span class="nav-link" data-target="#overview">Overview</span>
+            <span class="nav-link" data-target="#categories">Categories</span>
+            <span class="nav-link" data-target="#timeline">Timeline</span>
+            <span class="nav-link" data-target="#awards">Awards</span>
+            <span class="nav-link" data-target="#contact">Contact</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="home">
+        <div class="container">
+          <div class="hero-inner">
+            <div class="hero-main reveal">
+              <div class="hero-tag">
+                <span class="hero-tag-dot"></span>
+                <span>Official CMR-wide digital talent movement</span>
+                <span class="hero-tag-divider"></span>
+                <span>2025 Edition · Digital Campus</span>
+              </div>
+              <h1 class="hero-title">
+                <span class="hero-highlight">CMR Talent League</span><br />
+                — Powered by BeSure
+              </h1>
+              <p class="hero-subtitle">
+                A movement to discover, celebrate, and amplify student talent across
+                CMR Group of Institutions. Thirty days. One digital campus. Infinite
+                possibilities.
+              </p>
+              <div class="hero-cta-row">
+                <a href="#timeline" class="btn btn-primary">
+                  Register Now
+                </a>
+                <a href="#overview" class="btn btn-outline">
+                  Learn More
+                </a>
+              </div>
+              <p class="hero-footnote">
+                <strong>For all active CMR students</strong> — across streams, campuses, and
+                talent domains.
+              </p>
+            </div>
+
+            <aside class="hero-visual reveal reveal-delay-1" aria-hidden="true">
+              <div class="hero-card">
+                <div class="hero-card-top">
+                  <div>
+                    <div class="hero-card-label">Digital Talent Campus</div>
+                    <div class="hero-card-title">
+                      Launch your portfolio <br />
+                      while you’re still on campus.
+                    </div>
+                  </div>
+                  <div class="hero-pill">
+                    <span class="hero-pill-dot"></span>
+                    <span>30-Day League</span>
+                  </div>
+                </div>
+
+                <div class="hero-stats-grid">
+                  <div class="stat-card">
+                    <div class="stat-label">Talent Categories</div>
+                    <div class="stat-value">10</div>
+                    <div class="stat-meta">From athletes to founders to artists.</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-label">Format</div>
+                    <div class="stat-value">Digital-first</div>
+                    <div class="stat-meta">Publish, tag, showcase, grow.</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-label">Focus</div>
+                    <div class="stat-value">Authentic</div>
+                    <div class="stat-meta">Real work, real journeys, real wins.</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-label">Powered By</div>
+                    <div class="stat-value">BeSure</div>
+                    <div class="stat-meta">Career readiness & visibility.</div>
+                  </div>
+                </div>
+
+                <div class="hero-bottom-row">
+                  <div class="hero-progress-copy">
+                    Posting earlier unlocks more reach and visibility.
+                  </div>
+                  <div class="hero-progress-track">
+                    <div class="hero-progress-value"></div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vision -->
+      <section id="vision">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Vision</div>
+            <h2 class="section-title">A launchpad for visible, credible talent</h2>
+          </div>
+
+          <div class="vision-card reveal reveal-delay-1">
+            To transform <strong>CMR Group of Institutions</strong> into a launchpad where
+            <strong>talent becomes visible</strong>, <strong>skills turn into opportunities</strong>,
+            and students evolve into <strong>creators, innovators, and leaders</strong>.
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Objectives -->
+      <section id="objectives">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Core Objectives</div>
+            <h2 class="section-title">What CMR Talent League sets in motion</h2>
+            <p class="section-subtitle">
+              A structured yet flexible format that aligns student creativity with digital
+              credibility, long-term careers, and institutional brand building.
+            </p>
+          </div>
+
+          <div class="objectives-grid">
+            <div class="objective-card reveal">
+              <div class="objective-icon">◎</div>
+              <div>
+                Showcase authentic student talent to the world.
+              </div>
+            </div>
+            <div class="objective-card reveal reveal-delay-1">
+              <div class="objective-icon">★</div>
+              <div>
+                Build a culture of ambition, creativity, and innovation.
+              </div>
+            </div>
+            <div class="objective-card reveal reveal-delay-2">
+              <div class="objective-icon">☼</div>
+              <div>
+                Increase positive digital presence organically.
+              </div>
+            </div>
+            <div class="objective-card reveal reveal-delay-3">
+              <div class="objective-icon">∞</div>
+              <div>
+                Connect students with mentors, opportunities, and communities.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Overview -->
+      <section id="overview">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Event Overview</div>
+            <h2 class="section-title">What is CMR Talent League?</h2>
+          </div>
+
+          <div class="overview-layout">
+            <div class="overview-main reveal">
+              <p>
+                A 30-day digital talent showcase where CMR students create content demonstrating
+                skills, publish it publicly, tag official pages, and compete in curated categories.
+                The campaign promotes authentic achievements, innovation, sports, arts, and
+                creativity.
+              </p>
+            </div>
+
+            <aside class="overview-sidebar reveal reveal-delay-1">
+              <div class="badge">
+                <span class="badge-pill">30</span>
+                <span>Days · Fully Digital · Campus-wide</span>
+              </div>
+              <span>How it works:</span>
+              <div class="dot-row">
+                <span>→ Choose your category</span>
+                <span>→ Create and publish content</span>
+              </div>
+              <div class="dot-row">
+                <span>→ Tag official CMR + BeSure pages</span>
+                <span>→ Compete, learn, and grow</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- Talent Categories -->
+      <section id="categories">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Talent Categories</div>
+            <h2 class="section-title">Where your strengths find a stage</h2>
+            <p class="section-subtitle">
+              Pick the lane that reflects who you are today — or who you’re becoming tomorrow.
+              Hover on each category to see how your content can fit.
+            </p>
+          </div>
+
+          <div class="categories-grid">
+            <div class="category-card reveal">
+              <div class="category-tag">Performance</div>
+              <div class="category-name">CMR Athlete Prodigy</div>
+              <p class="category-description">
+                For student athletes showcasing performance, discipline, training journeys, and
+                competitive achievements on and off the field.
+              </p>
+            </div>
+
+            <div class="category-card reveal reveal-delay-1">
+              <div class="category-tag">Technology</div>
+              <div class="category-name">Tech Maker Award</div>
+              <p class="category-description">
+                Highlight prototypes, apps, code, hackathon wins, and real-world tech problem solving.
+                Show how you build, not just what you know.
+              </p>
+            </div>
+
+            <div class="category-card reveal reveal-delay-2">
+              <div class="category-tag">Content</div>
+              <div class="category-name">Creative Storyteller</div>
+              <p class="category-description">
+                Scripted videos, blogs, short films, campaigns, or narratives that move people, shift
+                perspectives, or communicate complex ideas simply.
+              </p>
+            </div>
+
+            <div class="category-card reveal reveal-delay-3">
+              <div class="category-tag">Voice & Influence</div>
+              <div class="category-name">Voice of CMR</div>
+              <p class="category-description">
+                Campus-focused hosts, speakers, emcees, and podcasters who give CMR a confident, clear,
+                and compelling voice.
+              </p>
+            </div>
+
+            <div class="category-card reveal">
+              <div class="category-tag">Entrepreneurship</div>
+              <div class="category-name">Startup Spark</div>
+              <p class="category-description">
+                Early-stage founders, startup ideas, MVPs, and business experiments that demonstrate
+                initiative, risk-taking, and execution.
+              </p>
+            </div>
+
+            <div class="category-card reveal reveal-delay-1">
+              <div class="category-tag">Digital Presence</div>
+              <div class="category-name">Digital Influence Champion</div>
+              <p class="category-description">
+                Students who build meaningful digital audiences through consistent, authentic, and
+                value-driven content.
+              </p>
+            </div>
+
+            <div class="category-card reveal reveal-delay-2">
+              <div class="category-tag">Innovation & IP</div>
+              <div class="category-name">Innovation and IP Master</div>
+              <p class="category-description">
+                Patents, research, original solutions, and IP-focused work that demonstrates depth,
+                rigour, and future potential.
+              </p>
+            </div>
+
+            <div class="category-card reveal reveal-delay-3">
+              <div class="category-tag">Impact</div>
+              <div class="category-name">Social Changemaker</div>
+              <p class="category-description">
+                Initiatives, campaigns, or projects that create measurable social impact in communities,
+                on campus or beyond.
+              </p>
+            </div>
+
+            <div class="category-card reveal">
+              <div class="category-tag">Design & Arts</div>
+              <div class="category-name">Visual Artist</div>
+              <p class="category-description">
+                Illustrators, designers, photographers, filmmakers, and visual creators who tell stories
+                through images and design systems.
+              </p>
+            </div>
+
+            <div class="category-card reveal reveal-delay-1">
+              <div class="category-tag">Flagship</div>
+              <div class="category-name">Campus Icon</div>
+              <p class="category-description">
+                All-rounders who represent the spirit of CMR — talent, leadership, consistency, and
+                positive influence in one credible profile.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Judging Criteria -->
+      <section id="judging">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Judging Criteria</div>
+            <h2 class="section-title">How talent is evaluated</h2>
+          </div>
+
+          <div class="judging-layout">
+            <div class="criteria-list reveal">
+              <div class="criterion-row">
+                <div class="criterion-label">Authenticity</div>
+                <div class="criterion-percent">20%</div>
+                <div class="criterion-bar">
+                  <div class="criterion-fill" style="width: 20%;"></div>
+                </div>
+              </div>
+
+              <div class="criterion-row">
+                <div class="criterion-label">Skill Demonstration</div>
+                <div class="criterion-percent">25%</div>
+                <div class="criterion-bar">
+                  <div class="criterion-fill" style="width: 25%;"></div>
+                </div>
+              </div>
+
+              <div class="criterion-row">
+                <div class="criterion-label">Impact and Reach</div>
+                <div class="criterion-percent">20%</div>
+                <div class="criterion-bar">
+                  <div class="criterion-fill" style="width: 20%;"></div>
+                </div>
+              </div>
+
+              <div class="criterion-row">
+                <div class="criterion-label">Creativity and Presentation</div>
+                <div class="criterion-percent">20%</div>
+                <div class="criterion-bar">
+                  <div class="criterion-fill" style="width: 20%;"></div>
+                </div>
+              </div>
+
+              <div class="criterion-row">
+                <div class="criterion-label">Growth Potential</div>
+                <div class="criterion-percent">15%</div>
+                <div class="criterion-bar">
+                  <div class="criterion-fill" style="width: 15%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal reveal-delay-1">
+              <p class="judging-note">
+                Engagement is valued but talent, originality, and effort matter more.
+              </p>
+              <p class="judging-note" style="margin-top: 0.7rem;">
+                Judges look for consistent effort, clarity of skill, personal voice, and professional
+                presentation — not just viral spikes or vanity metrics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section id="timeline">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Timeline</div>
+            <h2 class="section-title">Plan your content calendar</h2>
+          </div>
+
+          <div class="timeline reveal reveal-delay-1">
+            <div class="timeline-track">
+              <div class="timeline-item">
+                <div class="timeline-node">
+                  <div class="timeline-node-inner"></div>
+                </div>
+                <div class="timeline-label">Posting Window</div>
+                <div class="timeline-date">15 December → 15 January</div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-node">
+                  <div class="timeline-node-inner"></div>
+                </div>
+                <div class="timeline-label">Judging Begins</div>
+                <div class="timeline-date">15 January onward</div>
+              </div>
+            </div>
+
+            <p class="timeline-note">
+              Posting earlier offers more reach and algorithmic visibility. Treat this as a 30-day
+              runway to build a <strong>visible, searchable portfolio</strong> — not just a single post.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Participation Rules -->
+      <section id="rules">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Participation Rules</div>
+            <h2 class="section-title">Simple, clear, and fair</h2>
+          </div>
+
+          <div class="rules-grid">
+            <div class="rule-card reveal">
+              <div class="rule-title">Eligibility & Format</div>
+              <ul class="rule-list">
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span>Active CMR student only.</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span>Individual or team participation (except personal categories).</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span>Content must be posted from public accounts.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rule-card reveal reveal-delay-1">
+              <div class="rule-title">Tagging & Hashtags</div>
+              <ul class="rule-list">
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span>Must tag official CMR + BeSure pages.</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span>Must use hashtags:</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span class="hashtag">#CMRTalentLeague</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span class="hashtag">#PoweredByBeSure</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span class="hashtag">#CMRHyderabad</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span class="hashtag">#LifeAtCMR</span>
+                </li>
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span>Categories must be mentioned in caption.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="rule-card reveal reveal-delay-2">
+              <div class="rule-title">Integrity & Safety</div>
+              <ul class="rule-list">
+                <li>
+                  <span class="rule-bullet"></span>
+                  <span>
+                    Disqualification for fake engagement, plagiarism, vulgarity, harassment, or
+                    copyrighted media.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards & Perks -->
+      <section id="awards">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Awards & Perks</div>
+            <h2 class="section-title">More than trophies. A career signal.</h2>
+          </div>
+
+          <div class="awards-layout">
+            <div class="award-card reveal">
+              <div class="award-header">
+                <div class="award-title">Category Winners</div>
+                <div class="award-pill">Top Talent</div>
+              </div>
+              <ul class="award-list">
+                <li>
+                  <span class="award-icon">🎯</span>
+                  <span>Mentorship from industry professionals.</span>
+                </li>
+                <li>
+                  <span class="award-icon">📣</span>
+                  <span>Spotlight on official CMR platforms.</span>
+                </li>
+                <li>
+                  <span class="award-icon">📜</span>
+                  <span>Certificate of Excellence.</span>
+                </li>
+                <li>
+                  <span class="award-icon">🚀</span>
+                  <span>Strong promotional support and digital PR.</span>
+                </li>
+                <li>
+                  <span class="award-icon">🔗</span>
+                  <span>LinkedIn recommendation.</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="award-card reveal reveal-delay-1">
+              <div class="award-header">
+                <div class="award-title">All Participants</div>
+                <div class="award-pill">Everyone Wins</div>
+              </div>
+              <ul class="award-list">
+                <li>
+                  <span class="award-icon">✅</span>
+                  <span>Official participation certificate.</span>
+                </li>
+                <li>
+                  <span class="award-icon">📲</span>
+                  <span>Repost or feature opportunities on CMR channels.</span>
+                </li>
+                <li>
+                  <span class="award-icon">🧱</span>
+                  <span>Portfolio enhancement for future applications.</span>
+                </li>
+                <li>
+                  <span class="award-icon">🌐</span>
+                  <span>Online exposure and opportunities.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why This Matters -->
+      <section id="why">
+        <div class="container">
+          <div class="section-header reveal">
+            <div class="section-kicker">Why This Matters</div>
+            <h2 class="section-title">Built for your next chapter, not just this semester</h2>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card reveal">
+              <div class="why-icon">👁️</div>
+              <div class="why-title">Visibility</div>
+              <p class="why-text">
+                Your work deserves to be discovered beyond classrooms and closed groups. Talent
+                League makes it easy to be found for the right reasons.
+              </p>
+            </div>
+
+            <div class="why-card reveal reveal-delay-1">
+              <div class="why-icon">🎓</div>
+              <div class="why-title">Career empowerment</div>
+              <p class="why-text">
+                Turn posts into proof of work. Create assets you can attach to resumes, statements of
+                purpose, and job applications.
+              </p>
+            </div>
+
+            <div class="why-card reveal reveal-delay-2">
+              <div class="why-icon">✨</div>
+              <div class="why-title">Cultural shift</div>
+              <p class="why-text">
+                Move the campus culture from passive scrolling to active creating — where sharing
+                real efforts is the new normal.
+              </p>
+            </div>
+
+            <div class="why-card reveal reveal-delay-3">
+              <div class="why-icon">🤝</div>
+              <div class="why-title">Community engagement</div>
+              <p class="why-text">
+                Collaborate across campuses, courses, and cohorts. Build a network of peers who are
+                serious about what they’re building.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div>
+            <div class="footer-brand-title">CMR Talent League — Powered by BeSure</div>
+            <p class="footer-meta">
+              Official CMR-wide digital talent movement. A 30-day journey for students to turn
+              talent into visibility, and visibility into opportunity.
+            </p>
+          </div>
+          <div class="footer-contact">
+            <div>For registrations &amp; queries:</div>
+            <a href="mailto:email@example.com">email@example.com</a>
+          </div>
+        </div>
+
+        <p class="footer-copy">
+          © <span id="year"></span> CMR Talent League · All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" type="button" aria-label="Scroll to top">
+      ↑
+    </button>
+  </div>
+
+  <script>
+    (function () {
+      const header = document.querySelector(".site-header");
+      const navLinks = document.querySelectorAll(".nav-link[data-target]");
+      const navCta = document.querySelector(".nav-cta");
+      const sections = document.querySelectorAll("section[id]");
+      const menuToggle = document.querySelector(".menu-toggle");
+      const scrollTopBtn = document.querySelector(".scroll-top");
+      const body = document.body;
+
+      // Dynamic year in footer
+      const yearSpan = document.getElementById("year");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      // Smooth scroll with offset for sticky header
+      function scrollToSection(targetId) {
+        const section = document.querySelector(targetId);
+        if (!section) return;
+
+        const headerHeight = header ? header.offsetHeight : 0;
+        const rect = section.getBoundingClientRect();
+        const offsetTop = rect.top + window.pageYOffset - headerHeight + 4;
+
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const targetId = link.getAttribute("data-target");
+          if (!targetId) return;
+          event.preventDefault();
+          scrollToSection(targetId);
+
+          // Close mobile menu on navigation
+          if (body.classList.contains("nav-open")) {
+            body.classList.remove("nav-open");
+            menuToggle && menuToggle.classList.remove("is-open");
+          }
+        });
+      });
+
+      if (navCta) {
+        navCta.addEventListener("click", (event) => {
+          const targetId = navCta.getAttribute("data-target") || "#timeline";
+          event.preventDefault();
+          scrollToSection(targetId);
+        });
+      }
+
+      // Mobile menu toggle
+      if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+          const isOpen = body.classList.toggle("nav-open");
+          menuToggle.classList.toggle("is-open", isOpen);
+        });
+      }
+
+      // Scroll to top button
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      // Scroll events (show scroll-top, basic active section logic)
+      function onScroll() {
+        const scrollY = window.scrollY || window.pageYOffset;
+
+        // Scroll to top button visibility
+        if (scrollTopBtn) {
+          if (scrollY > 380) {
+            scrollTopBtn.classList.add("show");
+          } else {
+            scrollTopBtn.classList.remove("show");
+          }
+        }
+
+        // Optional: highlight nav based on current section (minimal, no heavy styles)
+        let currentId = "";
+        sections.forEach((section) => {
+          const offsetTop = section.offsetTop - (header ? header.offsetHeight + 80 : 80);
+          if (scrollY >= offsetTop) {
+            currentId = section.id;
+          }
+        });
+
+        if (currentId) {
+          navLinks.forEach((link) => {
+            const targetId = link.getAttribute("data-target") || "";
+            const isActive = targetId === `#${currentId}`;
+            link.style.color = isActive ? "#f9fafb" : "";
+          });
+        }
+      }
+
+      window.addEventListener("scroll", onScroll);
+
+      // Scroll reveal animations using IntersectionObserver
+      const revealElements = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window && revealElements.length > 0) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.15,
+          }
+        );
+
+        revealElements.forEach((el) => observer.observe(el));
+      } else {
+        // Fallback: show all if IntersectionObserver not supported
+        revealElements.forEach((el) => el.classList.add("visible"));
+      }
+    })();
+  </script>
+</body>
+</html>
