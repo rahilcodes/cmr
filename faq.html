@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQs | CMR Talent League 2025</title>
+
+  <meta name="description" content="Frequently Asked Questions about CMR Talent League 2025 – eligibility, submission, rules, rewards and more." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0b0f1a;
+      color: #eaeaf0;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --accent: #5cf2ff;
+      --accent2: #8b7cff;
+      --bg-card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(10,15,30,0.6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    nav a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .nav-btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000 !important;
+      font-weight: 600;
+    }
+
+    .nav-btn.outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #fff !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 140px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(92,242,255,0.15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(139,124,255,0.18), transparent 45%);
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+    }
+
+    /* FAQ */
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s ease;
+    }
+
+    .faq-question:hover {
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      padding: 0 24px;
+    }
+
+    .faq-answer p {
+      padding: 0 0 18px;
+      opacity: 0.9;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+    }
+
+    .faq-icon {
+      font-size: 1.4rem;
+      transition: 0.3s;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+      color: var(--accent);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 6%;
+      text-align: center;
+      background: #080b14;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 6%;
+        background: #0c1224;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 14px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <a href="index.html">CMR TALENT LEAGUE</a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="how-to-participate.html">How to Participate</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="rewards.html">Rewards</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+        <li><a href="submit.html" class="nav-btn outline">Submit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Frequently Asked Questions</h1>
+  <p>
+    Find answers to common questions about participation, eligibility, submissions,
+    evaluation, and results for CMR Talent League 2025.
+  </p>
+</section>
+
+<!-- FAQ LIST -->
+<section>
+  <div class="faq-container">
+
+    <!-- FAQ ITEMS -->
+    <div class="faq-item">
+      <div class="faq-question">1. Who can participate in CMR Talent League? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Only current students of CMR Group of Institutions (UG, PG, Diploma) are eligible to participate.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">2. Can I participate in more than one category? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Yes. You may participate in multiple categories, but each category requires a separate submission.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">3. Is team participation allowed? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Yes, teams of up to 5 members are allowed except for identity-based categories like Campus Icon.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">4. How do I register? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>You must fill the official registration form. After registration, you will be added to the WhatsApp group.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">5. How will I submit my entry? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>You need to upload your content on a public social media account and submit the link using the submission form.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">6. Which platforms are allowed? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Instagram Reels, YouTube Shorts, Facebook Reels, and long YouTube videos (for tech/research categories).</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">7. Can I upload multiple posts for one category? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>No. Only one final submission per category will be evaluated.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">8. Should my account be public? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Yes. Your account must remain public until the results are announced.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">9. Are hashtags mandatory? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Yes. You must use the official hashtags provided in the submission guidelines.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">10. Can I edit or delete my post later? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>No. Editing or deleting posts before results may lead to disqualification.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">11. What languages are allowed? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>English, Hindi, and Telugu are allowed.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">12. Are subtitles compulsory? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Subtitles are recommended but not mandatory.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">13. How will winners be selected? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Evaluation is based on authenticity, skill, creativity, engagement, and growth potential.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">14. Who are the judges? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Judging is done by Team BeSURE, industry experts, and CMR higher management.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">15. When will results be announced? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Results will be announced on stage and shared on official social media platforms.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">16. What rewards do winners receive? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Winners receive certificates, recognition, mentorship opportunities, and digital features.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">17. Will all participants get certificates? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Yes, all valid participants will receive participation certificates.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">18. Is there any registration fee? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>No. Participation in CMR Talent League is completely free.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">19. What happens if rules are violated? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>Violation of rules may lead to disqualification without prior notice.</p></div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">20. Whom should I contact for help? <span class="faq-icon">+</span></div>
+      <div class="faq-answer"><p>You can contact the organizing team via the official Contact page or WhatsApp group.</p></div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>
+    Organized by <strong>BeSURE</strong> in collaboration with
+    <strong>CMR Group of Institutions</strong>
+  </p>
+  <p>© 2025 CMR Talent League. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+
+  document.querySelectorAll(".faq-question").forEach(item => {
+    item.addEventListener("click", () => {
+      const parent = item.parentElement;
+      parent.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>

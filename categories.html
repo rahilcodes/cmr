@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Categories | CMR Talent League 2025</title>
+
+  <meta name="description" content="Explore all talent categories of CMR Talent League 2025 and choose where to showcase your skills." />
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0b0f1a;
+      color: #eaeaf0;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --accent: #5cf2ff;
+      --accent2: #8b7cff;
+      --bg-card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    p {
+      opacity: 0.85;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(10,15,30,0.6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    /* ✅ ACTIVE MENU STYLE */
+    nav a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .nav-btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000 !important;
+      font-weight: 600;
+    }
+
+    .nav-btn.outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #fff !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 140px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(92,242,255,0.15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(139,124,255,0.18), transparent 45%);
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+    }
+
+    /* CATEGORY GRID */
+    .category-grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 26px;
+    }
+
+    .category-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      transition: 0.3s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+
+    .category-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .category-card p {
+      margin-bottom: 12px;
+    }
+
+    .category-card ul {
+      padding-left: 18px;
+      opacity: 0.9;
+    }
+
+    .category-card li {
+      margin-bottom: 6px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 6%;
+      text-align: center;
+      background: #080b14;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 6%;
+        background: #0c1224;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 14px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <a href="index.html">CMR TALENT LEAGUE</a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html" class="active">Categories</a></li>
+        <li><a href="how-to-participate.html">How to Participate</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="rewards.html">Rewards</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+        <li><a href="submit.html" class="nav-btn outline">Submit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Talent Categories</h1>
+  <p>
+    Choose one or more categories that best represent your skills, creativity,
+    innovation, or impact. Each category has clear examples to guide your submission.
+  </p>
+</section>
+
+<!-- CATEGORY LIST -->
+<section>
+  <div class="category-grid">
+
+    <div class="category-card">
+      <h3>CMR Athlete Prodigy</h3>
+      <p>Sports performance, fitness excellence, and competitive gameplay.</p>
+      <ul>
+        <li>Match highlights or training clips</li>
+        <li>Fitness transformations or workouts</li>
+        <li>Indoor or outdoor sports performance</li>
+        <li>Athletic drills or challenges</li>
+        <li>Sports achievements or medals</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Tech Maker Award</h3>
+      <p>Technology-based innovation, coding, and engineering.</p>
+      <ul>
+        <li>Coding projects or demos</li>
+        <li>AI / ML tools or automations</li>
+        <li>Robotics or hardware builds</li>
+        <li>App or website development</li>
+        <li>Technical problem-solving</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Creative Storyteller</h3>
+      <p>Visual storytelling through editing and narrative creativity.</p>
+      <ul>
+        <li>Short films or cinematic edits</li>
+        <li>Video editing showreels</li>
+        <li>Digital storytelling concepts</li>
+        <li>Creative reels</li>
+        <li>Concept-based visuals</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Voice of CMR</h3>
+      <p>Performance-based expression using voice or movement.</p>
+      <ul>
+        <li>Singing performances</li>
+        <li>Rapping or spoken word</li>
+        <li>Poetry recitation</li>
+        <li>Public speaking or speeches</li>
+        <li>Dancing performances</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Startup Spark</h3>
+      <p>Entrepreneurship, innovation, and business thinking.</p>
+      <ul>
+        <li>Startup ideas or pitch videos</li>
+        <li>Working prototypes or MVPs</li>
+        <li>Revenue or traction showcase</li>
+        <li>Business model explanation</li>
+        <li>Product or service demos</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Digital Influence Champion</h3>
+      <p>Creators who educate, inspire, or engage audiences.</p>
+      <ul>
+        <li>Educational content</li>
+        <li>Lifestyle or niche-based content</li>
+        <li>Personal branding</li>
+        <li>Informative reels or series</li>
+        <li>Consistent creator portfolios</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Innovation & IP Master</h3>
+      <p>Research-driven and innovation-focused contributions.</p>
+      <ul>
+        <li>Patent filings or concepts</li>
+        <li>Research projects</li>
+        <li>Scientific experiments</li>
+        <li>Technical papers or models</li>
+        <li>Innovative problem-solving</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Social Changemaker</h3>
+      <p>Positive impact and meaningful contribution to society.</p>
+      <ul>
+        <li>Community service initiatives</li>
+        <li>Awareness campaigns</li>
+        <li>NGO or volunteer work</li>
+        <li>Social problem-solving</li>
+        <li>Impact-driven storytelling</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Visual Artist</h3>
+      <p>Creative expression through art and visual media.</p>
+      <ul>
+        <li>Photography portfolios</li>
+        <li>Videography projects</li>
+        <li>Drone shots</li>
+        <li>Digital or handmade artwork</li>
+        <li>Creative compositions</li>
+      </ul>
+    </div>
+
+    <div class="category-card">
+      <h3>Campus Icon</h3>
+      <p>Personality, presence, and overall campus influence.</p>
+      <ul>
+        <li>Modeling or fashion shoots</li>
+        <li>Confidence & stage presence</li>
+        <li>Personality-based reels</li>
+        <li>Style and presentation</li>
+        <li>Campus representation content</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>
+    Organized by <strong>BeSURE</strong> in collaboration with
+    <strong>CMR Group of Institutions</strong>
+  </p>
+  <p>© 2025 CMR Talent League. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
+

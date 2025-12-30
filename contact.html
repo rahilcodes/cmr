@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Volunteers | CMR Talent League 2025</title>
+
+  <meta name="description" content="Contact details and volunteer coordinators for CMR Talent League 2025." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0b0f1a;
+      color: #eaeaf0;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --accent: #5cf2ff;
+      --accent2: #8b7cff;
+      --bg-card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      opacity: 0.85;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(10,15,30,0.6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    nav a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .nav-btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000 !important;
+      font-weight: 600;
+    }
+
+    .nav-btn.outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #fff !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 140px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(92,242,255,0.15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(139,124,255,0.18), transparent 45%);
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+    }
+
+    /* CONTACT INFO */
+    .contact-box {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .contact-box p {
+      margin-bottom: 10px;
+    }
+
+    /* VOLUNTEERS */
+    .college-section {
+      margin-bottom: 70px;
+    }
+
+    .college-title {
+      font-size: 1.8rem;
+      margin-bottom: 25px;
+      color: var(--accent);
+      text-align: center;
+    }
+
+    .volunteer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .volunteer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .volunteer-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--accent);
+    }
+
+    .volunteer-card h4 {
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+    }
+
+    .volunteer-card p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 6%;
+      text-align: center;
+      background: #080b14;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 6%;
+        background: #0c1224;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 14px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <a href="index.html">CMR TALENT LEAGUE</a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="how-to-participate.html">How to Participate</a></li>
+        <li><a href="rules.html">Rules</a></li>
+        <li><a href="rewards.html">Rewards</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+        <li><a href="submit.html" class="nav-btn outline">Submit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Contact & Volunteer Coordinators</h1>
+  <p>
+    Reach out to the volunteer coordinators from your respective colleges
+    for any queries related to participation or submissions.
+  </p>
+</section>
+
+<!-- CONTACT INFO -->
+<section>
+  <div class="contact-box">
+    <h2>Official Communication</h2>
+    <p>📩 All official updates will be shared via WhatsApp after registration.</p>
+    <p>📢 Organized by <strong>BeSURE</strong> in collaboration with <strong>CMR Group of Institutions</strong>.</p>
+    <p>For general queries, please approach your respective college coordinators below.</p>
+  </div>
+</section>
+
+<!-- VOLUNTEERS -->
+
+<section>
+
+  <!-- CMRCET -->
+  <div class="college-section">
+    <h2 class="college-title">CMR College of Engineering & Technology (CMRCET)</h2>
+    <div class="volunteer-grid">
+      <div class="volunteer-card"><h4>Ayaan Khan</h4><p>+91 90001 11101</p></div>
+      <div class="volunteer-card"><h4>Rohit Verma</h4><p>+91 90001 11102</p></div>
+      <div class="volunteer-card"><h4>Neha Reddy</h4><p>+91 90001 11103</p></div>
+      <div class="volunteer-card"><h4>Arjun Patel</h4><p>+91 90001 11104</p></div>
+      <div class="volunteer-card"><h4>Sana Shaikh</h4><p>+91 90001 11105</p></div>
+      <div class="volunteer-card"><h4>Vikram Rao</h4><p>+91 90001 11106</p></div>
+      <div class="volunteer-card"><h4>Priya Sharma</h4><p>+91 90001 11107</p></div>
+      <div class="volunteer-card"><h4>Aditya Jain</h4><p>+91 90001 11108</p></div>
+      <div class="volunteer-card"><h4>Faizan Ali</h4><p>+91 90001 11109</p></div>
+      <div class="volunteer-card"><h4>Ananya Gupta</h4><p>+91 90001 11110</p></div>
+    </div>
+  </div>
+
+  <!-- CMRIT -->
+  <div class="college-section">
+    <h2 class="college-title">CMR Institute of Technology (CMRIT)</h2>
+    <div class="volunteer-grid">
+      <div class="volunteer-card"><h4>Rahul Mehta</h4><p>+91 90001 22201</p></div>
+      <div class="volunteer-card"><h4>Ayesha Khan</h4><p>+91 90001 22202</p></div>
+      <div class="volunteer-card"><h4>Karthik Reddy</h4><p>+91 90001 22203</p></div>
+      <div class="volunteer-card"><h4>Nikhil Verma</h4><p>+91 90001 22204</p></div>
+      <div class="volunteer-card"><h4>Pooja Singh</h4><p>+91 90001 22205</p></div>
+      <div class="volunteer-card"><h4>Sameer Khan</h4><p>+91 90001 22206</p></div>
+      <div class="volunteer-card"><h4>Ritika Jain</h4><p>+91 90001 22207</p></div>
+      <div class="volunteer-card"><h4>Aman Gupta</h4><p>+91 90001 22208</p></div>
+      <div class="volunteer-card"><h4>Harsha Vardhan</h4><p>+91 90001 22209</p></div>
+      <div class="volunteer-card"><h4>Nandini Rao</h4><p>+91 90001 22210</p></div>
+    </div>
+  </div>
+
+  <!-- CMRTC -->
+  <div class="college-section">
+    <h2 class="college-title">CMR Technical Campus (CMRTC)</h2>
+    <div class="volunteer-grid">
+      <div class="volunteer-card"><h4>Rakesh Kumar</h4><p>+91 90001 33301</p></div>
+      <div class="volunteer-card"><h4>Simran Kaur</h4><p>+91 90001 33302</p></div>
+      <div class="volunteer-card"><h4>Vivek Sharma</h4><p>+91 90001 33303</p></div>
+      <div class="volunteer-card"><h4>Alisha Khan</h4><p>+91 90001 33304</p></div>
+      <div class="volunteer-card"><h4>Rohan Das</h4><p>+91 90001 33305</p></div>
+      <div class="volunteer-card"><h4>Meghana Rao</h4><p>+91 90001 33306</p></div>
+      <div class="volunteer-card"><h4>Yash Patel</h4><p>+91 90001 33307</p></div>
+      <div class="volunteer-card"><h4>Neeraj Singh</h4><p>+91 90001 33308</p></div>
+      <div class="volunteer-card"><h4>Pallavi Joshi</h4><p>+91 90001 33309</p></div>
+      <div class="volunteer-card"><h4>Arman Shaikh</h4><p>+91 90001 33310</p></div>
+    </div>
+  </div>
+
+  <!-- CMRIMS -->
+  <div class="college-section">
+    <h2 class="college-title">CMR Institute of Management Studies (CMRIMS)</h2>
+    <div class="volunteer-grid">
+      <div class="volunteer-card"><h4>Riya Malhotra</h4><p>+91 90001 44401</p></div>
+      <div class="volunteer-card"><h4>Akash Verma</h4><p>+91 90001 44402</p></div>
+      <div class="volunteer-card"><h4>Sneha Patel</h4><p>+91 90001 44403</p></div>
+      <div class="volunteer-card"><h4>Mohit Jain</h4><p>+91 90001 44404</p></div>
+      <div class="volunteer-card"><h4>Anjali Desai</h4><p>+91 90001 44405</p></div>
+      <div class="volunteer-card"><h4>Rohini Kulkarni</h4><p>+91 90001 44406</p></div>
+      <div class="volunteer-card"><h4>Faiz Ahmed</h4><p>+91 90001 44407</p></div>
+      <div class="volunteer-card"><h4>Tanvi Joshi</h4><p>+91 90001 44408</p></div>
+      <div class="volunteer-card"><h4>Adil Khan</h4><p>+91 90001 44409</p></div>
+      <div class="volunteer-card"><h4>Pooja Nair</h4><p>+91 90001 44410</p></div>
+    </div>
+  </div>
+
+  <!-- CMREC -->
+  <div class="college-section">
+    <h2 class="college-title">CMR Engineering College (CMREC)</h2>
+    <div class="volunteer-grid">
+      <div class="volunteer-card"><h4>Kunal Shah</h4><p>+91 90001 55501</p></div>
+      <div class="volunteer-card"><h4>Divya Reddy</h4><p>+91 90001 55502</p></div>
+      <div class="volunteer-card"><h4>Aryan Malhotra</h4><p>+91 90001 55503</p></div>
+      <div class="volunteer-card"><h4>Shruti Kulkarni</h4><p>+91 90001 55504</p></div>
+      <div class="volunteer-card"><h4>Imran Shaikh</h4><p>+91 90001 55505</p></div>
+      <div class="volunteer-card"><h4>Neha Kapoor</h4><p>+91 90001 55506</p></div>
+      <div class="volunteer-card"><h4>Rajat Mehra</h4><p>+91 90001 55507</p></div>
+      <div class="volunteer-card"><h4>Shalini Verma</h4><p>+91 90001 55508</p></div>
+      <div class="volunteer-card"><h4>Adeel Khan</h4><p>+91 90001 55509</p></div>
+      <div class="volunteer-card"><h4>Kavya Iyer</h4><p>+91 90001 55510</p></div>
+    </div>
+  </div>
+
+  <!-- CMRCP -->
+  <div class="college-section">
+    <h2 class="college-title">CMR College of Pharmacy (CMRCP)</h2>
+    <div class="volunteer-grid">
+      <div class="volunteer-card"><h4>Rahul Patil</h4><p>+91 90001 66601</p></div>
+      <div class="volunteer-card"><h4>Pooja Kulkarni</h4><p>+91 90001 66602</p></div>
+      <div class="volunteer-card"><h4>Sameer Ansari</h4><p>+91 90001 66603</p></div>
+      <div class="volunteer-card"><h4>Anusha Reddy</h4><p>+91 90001 66604</p></div>
+      <div class="volunteer-card"><h4>Rohit Nair</h4><p>+91 90001 66605</p></div>
+      <div class="volunteer-card"><h4>Megha Joshi</h4><p>+91 90001 66606</p></div>
+      <div class="volunteer-card"><h4>Faheem Khan</h4><p>+91 90001 66607</p></div>
+      <div class="volunteer-card"><h4>Tanisha Roy</h4><p>+91 90001 66608</p></div>
+      <div class="volunteer-card"><h4>Abhishek Rao</h4><p>+91 90001 66609</p></div>
+      <div class="volunteer-card"><h4>Nikita Shah</h4><p>+91 90001 66610</p></div>
+    </div>
+  </div>
+
+</section>
+
+<footer>
+  <p>
+    Organized by <strong>BeSURE</strong> in collaboration with
+    <strong>CMR Group of Institutions</strong>
+  </p>
+  <p>© 2025 CMR Talent League. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>

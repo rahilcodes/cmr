@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rules & Guidelines | CMR Talent League 2025</title>
+
+  <meta name="description" content="Official rules, eligibility, judging criteria and guidelines for CMR Talent League 2025." />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", system-ui, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0b0f1a;
+      color: #eaeaf0;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --accent: #5cf2ff;
+      --accent2: #8b7cff;
+      --bg-card: rgba(255,255,255,0.06);
+      --border: rgba(255,255,255,0.12);
+    }
+
+    section {
+      padding: 80px 6%;
+    }
+
+    h1, h2, h3 {
+      font-weight: 700;
+      letter-spacing: -0.4px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+
+    p {
+      opacity: 0.85;
+    }
+
+    /* NAVBAR */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+      backdrop-filter: blur(12px);
+      background: rgba(10,15,30,0.6);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 14px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo a {
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 22px;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      opacity: 1;
+    }
+
+    nav a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    nav a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+    }
+
+    .nav-btn {
+      padding: 10px 18px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #000 !important;
+      font-weight: 600;
+    }
+
+    .nav-btn.outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: #fff !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      padding-top: 140px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, rgba(92,242,255,0.15), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(139,124,255,0.18), transparent 45%);
+    }
+
+    .hero p {
+      max-width: 850px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+    }
+
+    /* CONTENT BLOCKS */
+    .content-box {
+      max-width: 900px;
+      margin: 0 auto 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 36px;
+    }
+
+    .content-box h3 {
+      margin-bottom: 14px;
+      font-size: 1.4rem;
+    }
+
+    .content-box ul {
+      padding-left: 18px;
+      margin-top: 12px;
+    }
+
+    .content-box li {
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 6%;
+      text-align: center;
+      background: #080b14;
+    }
+
+    footer p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        position: absolute;
+        top: 60px;
+        right: 6%;
+        background: #0c1224;
+        flex-direction: column;
+        padding: 20px;
+        border-radius: 14px;
+        display: none;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">
+      <a href="index.html">CMR TALENT LEAGUE</a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="categories.html">Categories</a></li>
+        <li><a href="how-to-participate.html">How to Participate</a></li>
+        <li><a href="rules.html" class="active">Rules</a></li>
+        <li><a href="rewards.html">Rewards</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="register.html" class="nav-btn">Register</a></li>
+        <li><a href="submit.html" class="nav-btn outline">Submit</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Rules & Guidelines</h1>
+  <p>
+    Please read all rules carefully before participating. These guidelines ensure
+    fairness, transparency, and equal opportunity for all students.
+  </p>
+</section>
+
+<!-- ELIGIBILITY -->
+<section>
+  <div class="content-box">
+    <h3>Eligibility</h3>
+    <ul>
+      <li>Only current students of <span class="highlight">CMR Group of Institutions</span> are eligible.</li>
+      <li>UG, PG, and Diploma students may participate.</li>
+      <li>Alumni, faculty members, and external participants are not allowed.</li>
+      <li>Participants may enter <strong>multiple categories</strong>.</li>
+      <li>Each category requires a <strong>separate submission</strong>.</li>
+    </ul>
+  </div>
+
+  <div class="content-box">
+    <h3>Team Participation Rules</h3>
+    <ul>
+      <li>Maximum of <strong>5 members</strong> per team.</li>
+      <li>Only one member needs to upload the content.</li>
+      <li>All team members must be tagged or mentioned.</li>
+      <li>Certificates will be issued individually.</li>
+      <li>The team leader is responsible for coordination.</li>
+    </ul>
+  </div>
+
+  <div class="content-box">
+    <h3>Submission Rules</h3>
+    <ul>
+      <li>Content must be posted on a <strong>public account</strong>.</li>
+      <li>Accepted platforms: Instagram, YouTube, Facebook.</li>
+      <li>YouTube long-form videos are allowed for tech/startup/research categories.</li>
+      <li>Mandatory tagging of official CMR & BeSURE pages.</li>
+      <li>Mandatory hashtags must be used.</li>
+      <li>Posts must remain public until results are announced.</li>
+    </ul>
+  </div>
+
+  <div class="content-box">
+    <h3>Content Guidelines</h3>
+    <ul>
+      <li>Vertical video format (9:16) is preferred.</li>
+      <li>Reels / Shorts: 30–90 seconds.</li>
+      <li>YouTube videos: up to 10 minutes.</li>
+      <li>Languages allowed: English, Hindi, Telugu.</li>
+      <li>Subtitles are strongly recommended.</li>
+      <li>Images allowed for art, photography & research categories.</li>
+    </ul>
+  </div>
+
+  <div class="content-box">
+    <h3>Judging Criteria</h3>
+    <ul>
+      <li><strong>20%</strong> – Authenticity</li>
+      <li><strong>25%</strong> – Skill & execution</li>
+      <li><strong>20%</strong> – Organic reach & engagement</li>
+      <li><strong>20%</strong> – Creativity & presentation</li>
+      <li><strong>15%</strong> – Growth potential</li>
+    </ul>
+  </div>
+
+  <div class="content-box">
+    <h3>Disqualification Conditions</h3>
+    <ul>
+      <li>Buying likes, views, or followers.</li>
+      <li>Plagiarized or copyrighted content.</li>
+      <li>Fake achievements or misleading information.</li>
+      <li>Abusive, hateful, or inappropriate content.</li>
+      <li>Private or deleted posts during evaluation.</li>
+      <li>Any content harming the reputation of CMR or BeSURE.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Organized by <strong>BeSURE</strong> in collaboration with
+    <strong>CMR Group of Institutions</strong>
+  </p>
+  <p>© 2025 CMR Talent League. All rights reserved.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
